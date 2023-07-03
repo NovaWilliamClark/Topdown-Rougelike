@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c81b3368-133d-49f5-860c-dd432ff3866c}</ProjectGuid>
+    <RootNamespace>GD1P03Topdown</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)\Binaries\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\Intermediate\$(Configuration)\</IntDir>
+    <IncludePath>$(ProjectDir)\Source;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)\Binaries\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\Intermediate\$(Configuration)\</IntDir>
+    <IncludePath>$(ProjectDir)\Source;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Dependencies\SFML-2.5.1\include;$(ProjectDir)\Dependencies\imgui-sfml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)\Dependencies\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Dependencies\SFML-2.5.1\include;$(ProjectDir)\Dependencies\imgui-sfml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)\Dependencies\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Dependencies\imgui-sfml\imgui-SFML.cpp" />
+    <ClCompile Include="Dependencies\imgui-sfml\imgui.cpp" />
+    <ClCompile Include="Dependencies\imgui-sfml\imgui_draw.cpp" />
+    <ClCompile Include="Dependencies\imgui-sfml\imgui_tables.cpp" />
+    <ClCompile Include="Dependencies\imgui-sfml\imgui_widgets.cpp" />
+    <ClCompile Include="Source\Entities\Key.cpp" />
+    <ClCompile Include="Source\Entities\Enemy.cpp" />
+    <ClCompile Include="Source\Entities\Entity.cpp" />
+    <ClCompile Include="Source\Entities\Player.cpp" />
+    <ClCompile Include="Source\Application\Application.cpp" />
+    <ClCompile Include="Source\Application\Tilemap.cpp" />
+    <ClCompile Include="Source\Generator\Cave.cpp" />
+    <ClCompile Include="Source\Generator\Dungeon.cpp" />
+    <ClCompile Include="Source\Generator\Generator.cpp" />
+    <ClCompile Include="Source\Generator\Room.cpp" />
+    <ClCompile Include="Source\Input\InputManager.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Map\Map.cpp" />
+    <ClCompile Include="Source\Scene\Gameover\GameoverScene.cpp" />
+    <ClCompile Include="Source\Scene\Gameplay\GameplayScene.cpp" />
+    <ClCompile Include="Source\Scene\MainMenu\MainMenuScene.cpp" />
+    <ClCompile Include="Source\Scene\SceneManager.cpp" />
+    <ClCompile Include="Source\Scene\Title\TitleScene.cpp" />
+    <ClCompile Include="Source\Utility\Constants.hpp" />
+    <ClCompile Include="Source\Utility\Direction.cpp" />
+    <ClCompile Include="Source\Utility\Rng.cpp" />
+    <ClCompile Include="Source\Utility\Utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dependencies\imgui-sfml\imconfig-SFML.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imconfig.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imgui-SFML.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imgui-SFML_export.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imgui.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imgui_internal.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imstb_rectpack.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imstb_textedit.h" />
+    <ClInclude Include="Dependencies\imgui-sfml\imstb_truetype.h" />
+    <ClInclude Include="Source\Entities\Key.hpp" />
+    <ClInclude Include="Source\Entities\Enemy.hpp" />
+    <ClInclude Include="Source\Entities\Entity.hpp" />
+    <ClInclude Include="Source\Entities\Player.hpp" />
+    <ClInclude Include="Source\Application\Application.hpp" />
+    <ClInclude Include="Source\Application\Tilemap.hpp" />
+    <ClInclude Include="Source\Generator\Cave.hpp" />
+    <ClInclude Include="Source\Generator\Dungeon.hpp" />
+    <ClInclude Include="Source\Generator\Generator.hpp" />
+    <ClInclude Include="Source\Generator\Room.hpp" />
+    <ClInclude Include="Source\Input\InputManager.hpp" />
+    <ClInclude Include="Source\Map\Map.hpp" />
+    <ClInclude Include="Source\Map\Tile.hpp" />
+    <ClInclude Include="Source\Scene\Gameover\GameoverScene.hpp" />
+    <ClInclude Include="Source\Scene\Gameplay\GameplayScene.hpp" />
+    <ClInclude Include="Source\Scene\MainMenu\MainMenuScene.hpp" />
+    <ClInclude Include="Source\Scene\Scene.hpp" />
+    <ClInclude Include="Source\Scene\SceneManager.hpp" />
+    <ClInclude Include="Source\Scene\Title\TitleScene.hpp" />
+    <ClInclude Include="Source\Utility\Direction.hpp" />
+    <ClInclude Include="Source\Utility\Rng.hpp" />
+    <ClInclude Include="Source\Utility\Utility.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
